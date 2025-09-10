@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Zentriq Logo" width="120" height="120">
+  <img src="zentriq logo.png" alt="Zentriq Logo" width="120" height="120">
 </p>
 
 <h1 align="center">Zentriq – AI Desktop Assistant</h1>
