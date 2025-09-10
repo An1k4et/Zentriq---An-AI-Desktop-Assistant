@@ -1,5 +1,5 @@
 
-# Zentriq – AI Desktop Assistant
+#Zentriq – AI Desktop Assistant
 
 Zentriq is an **AI-powered desktop assistant** built using **JavaFX** and **Spring Boot**.  
 It integrates **Large Language Models (LLMs)** via **Spring AI (Ollama)** and enhances responses with **Retrieval-Augmented Generation (RAG)** by combining local document context with AI-powered reasoning.
