@@ -1,78 +1,55 @@
 
-# Zentriq – AI Desktop Assistant
+# Healthcare Management System
 
-Zentriq is an **AI-powered desktop assistant** built using **JavaFX** and **Spring Boot**.  
-It integrates **Large Language Models (LLMs)** via **Spring AI (Ollama)** and enhances responses with **Retrieval-Augmented Generation (RAG)** by combining local document context with AI-powered reasoning.
+Description
 
----
+This is a simple command-line application for managing healthcare data using Java and JDBC. The system allows users to perform basic operations such as adding, viewing, and deleting patient records. The goal of this project is to provide a foundational understanding of how to interact with a relational database using JDBC in Java.
 
-## ✨ Key Features
-- 🖥️ **Desktop Application** – User-friendly interface built with **JavaFX**.  
-- 🤖 **LLM Integration** – Uses **Ollama models** (e.g., `llama3`, `nomic-embed-text`) through **Spring AI**.  
-- 📄 **Document Understanding** – Supports **PDF parsing** (Apache PDFBox) and **text ingestion**.  
-- 🔍 **RAG (Retrieval-Augmented Generation)** – Embeds documents into a **Vector Store** and retrieves relevant context for queries.  
-- 🔐 **Secure & Configurable** – Credentials and model configs handled via Spring profiles.  
-- ⚡ **Real-time Chat Interface** – Smooth interaction with AI inside the desktop app.  
+Features
 
----
+*Add Patient*: Allows users to add new patient records to the database.\
+*View All Patients*: Displays a list of all patients stored in the database.\
+*Delete Patient*: Enables the deletion of patient records by their ID.\
+*Exit*: Exits the application.
 
-## 🏗️ Architecture Overview
+Requirements\
+Java Development Kit (JDK) 8 or higher\
+MySQL Database\
+MySQL JDBC Driver
 
-Zentriq combines **desktop UI + backend AI services** in a modular way:
+Setup Instructions
+1. Clone the Repository
+```
+ git clone https://github.com/your-username/healthcare-management-system.git
+ cd healthcare-management-system
+```
+2. Set Up the Database
+- Create a new MySQL database named **`healthcare`**.
+- Create the **`patients`** table with the following schema:
+```
+CREATE TABLE patients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    address VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) NOT NULL
+);
+```
+3. Update Database Configuration
+- Update the database URL, username, and password in the DatabaseConnection.java file to match your MySQL configuration.
+4. Compile and Run the Application
+```
+javac -cp .:mysql-connector-java-8.0.26.jar Main.java
+java -cp .:mysql-connector-java-8.0.26.jar Main
+```
+**Usage**
+1. Run the application.
+2. Follow the on-screen instructions to add, view, or delete patient records.
 
-1. **JavaFX Frontend (UI Layer)**  
-   - Provides the **chat interface**.  
-   - Handles **user input** and displays AI responses.  
-   - Implements simple event-driven interactions (send button, enter key).  
+**Future Enhancements**
+- Add user authentication.
+- Implement appointment scheduling and management.
+- Include medical records management.
+- Develop a user-friendly GUI.
 
-2. **Spring Boot Backend (Service Layer)**  
-   - Manages AI workflows.  
-   - Coordinates between **OllamaChatModel**, **EmbeddingModel**, and **Vector Store**.  
-   - Ensures scalable and testable code structure.  
 
-3. **Ollama LLM Integration (AI Layer)**  
-   - Connects to a **locally running Ollama server** (`http://localhost:11434`).  
-   - Supports **chat models** (`llama3`) for reasoning and **embedding models** (`nomic-embed-text`) for vectorization.  
-
-4. **RAG Pipeline (Knowledge Layer)**  
-   - Documents (PDF/TXT) are parsed and indexed into a **Vector Store**.  
-   - When a query arrives:  
-     - Similar docs are retrieved (`similaritySearch`).  
-     - Retrieved context is merged with the query.  
-     - Final enriched prompt is passed to the LLM for an accurate, context-aware response.  
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend**: JavaFX  
-- **Backend**: Spring Boot 3, Spring AI  
-- **AI/LLM**: Ollama (LLaMA models, Embedding models)  
-- **RAG**: Spring AI Vector Store  
-- **Data Processing**: Apache PDFBox, OpenCSV  
-- **Build Tool**: Maven  
-
----
-
-## 🚀 How It Works (Flow)
-
-1. User asks a question via the **JavaFX UI**.  
-2. Query is passed to the **OllamaService (Spring Boot)**.  
-3. Service performs **Vector Store similarity search** for context.  
-4. Constructs a **final enriched prompt** (Context + Question).  
-5. Sends prompt to the **Ollama LLM**.  
-6. Response is returned and displayed in the **desktop chat interface**.  
-
----
-
-## 🔮 Future Enhancements
-- Multi-document support with advanced indexing.  
-- Role-based access and authentication.  
-- Cloud vector store integration (Pinecone, Milvus).  
-- Voice input and speech synthesis.  
-
----
-
-## 📌 Conclusion
-Zentriq demonstrates how **desktop applications** can seamlessly integrate with **modern AI frameworks**.  
-It combines **Spring Boot reliability**, **JavaFX UI**, and **Spring AI + RAG architecture** to build a scalable, intelligent, and user-friendly AI assistant.
