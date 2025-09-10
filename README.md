@@ -11,10 +11,11 @@
 
 ---
 
-## 🚀 Introduction
+## 🚀 Introduction  
 
-Zentriq is an **AI-powered desktop assistant** designed to combine a modern **JavaFX interface** with the power of **Spring Boot backend services**.  
-It integrates **Large Language Models (LLMs)** via **Spring AI (Ollama)** and enhances responses with **Retrieval-Augmented Generation (RAG)** by blending document knowledge with AI reasoning.
+Zentriq is an AI-powered desktop assistant designed to combine a modern **JavaFX interface** with the power of **Spring Boot backend services**.  
+It integrates **Large Language Models (LLMs)** via **Spring AI (Ollama)** and enhances responses with **Retrieval-Augmented Generation (RAG)** by blending **document knowledge** with **AI reasoning**.
+
 ---
 
 ## ✨ Key Features
