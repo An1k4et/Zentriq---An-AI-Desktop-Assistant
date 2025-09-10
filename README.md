@@ -39,3 +39,39 @@ Zentriq combines **desktop UI + backend AI services** in a modular way:
      - Similar docs are retrieved (`similaritySearch`).  
      - Retrieved context is merged with the query.  
      - Final enriched prompt is passed to the LLM for an accurate, context-aware response.  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: JavaFX  
+- **Backend**: Spring Boot 3, Spring AI  
+- **AI/LLM**: Ollama (LLaMA models, Embedding models)  
+- **RAG**: Spring AI Vector Store  
+- **Data Processing**: Apache PDFBox, OpenCSV  
+- **Build Tool**: Maven  
+
+---
+
+## 🚀 How It Works (Flow)
+
+1. User asks a question via the **JavaFX UI**.  
+2. Query is passed to the **OllamaService (Spring Boot)**.  
+3. Service performs **Vector Store similarity search** for context.  
+4. Constructs a **final enriched prompt** (Context + Question).  
+5. Sends prompt to the **Ollama LLM**.  
+6. Response is returned and displayed in the **desktop chat interface**.  
+
+---
+
+## 🔮 Future Enhancements
+- Multi-document support with advanced indexing.  
+- Role-based access and authentication.  
+- Cloud vector store integration (Pinecone, Milvus).  
+- Voice input and speech synthesis.  
+
+---
+
+## 📌 Conclusion
+Zentriq demonstrates how **desktop applications** can seamlessly integrate with **modern AI frameworks**.  
+It combines **Spring Boot reliability**, **JavaFX UI**, and **Spring AI + RAG architecture** to build a scalable, intelligent, and user-friendly AI assistant.
